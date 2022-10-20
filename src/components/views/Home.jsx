@@ -40,17 +40,18 @@ export default function Home() {
           <Card.Body>
             <Card.Title>{pizza.name}</Card.Title>
           </Card.Body>
-          
+          <div className="orden-ingredientes">
             <ListGroup.Item><img className="pizzita" src='https://i.postimg.cc/NfQrK0Ky/pizza-1.png' alt='pizzita'/> {pizza.ingredients[0]}</ListGroup.Item>
             <ListGroup.Item><img className="pizzita" src='https://i.postimg.cc/NfQrK0Ky/pizza-1.png' alt='pizzita'/> {pizza.ingredients[1]}</ListGroup.Item>
             <ListGroup.Item><img className="pizzita" src='https://i.postimg.cc/NfQrK0Ky/pizza-1.png' alt='pizzita'/> {pizza.ingredients[2]}</ListGroup.Item>
             <ListGroup.Item><img className="pizzita" src='https://i.postimg.cc/NfQrK0Ky/pizza-1.png' alt='pizzita'/> {pizza.ingredients[3]}</ListGroup.Item>
+          </div>
           
-          <ListGroup> 
             <h3>Precio: ${pizza.price}</h3>
-            <Button variant="info" onClick={()=> (irPizza(pizza.id))}>Ver más <img className="ojos" src='https://i.postimg.cc/qMz5V1jv/eyes-1.png' alt='eyes'/></Button>
-            <Button variant="danger">Añadir <img className="carrito" src='https://i.postimg.cc/90jZ8F89/shopping-cart.png' alt='shopping-cart'/></Button>
-          </ListGroup>
+            <div className="botones"> 
+            <Button variant="info" size="sm" onClick={()=> (irPizza(pizza.id))}>Ver más <img className="ojos" src='https://i.postimg.cc/qMz5V1jv/eyes-1.png' alt='eyes'/></Button>
+            <Button variant="danger" size="sm" className="add">Añadir <img className="carrito" src='https://i.postimg.cc/90jZ8F89/shopping-cart.png' alt='shopping-cart'/></Button>
+          </div>
         </Card>
       ))}
     </div>

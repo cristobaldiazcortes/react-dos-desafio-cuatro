@@ -5,7 +5,7 @@ import { Contexto } from "../contexto/Contexto";
 
 
 export default function Pizza() {
-  const [pizzaDetalle, setPizzaDetalle] = useState([]);
+  const [pizzaDetalle, setPizzaDetalle] = useState({});
   const { pizzas } = useContext(Contexto);
   const { id } = useParams();
 
@@ -30,9 +30,6 @@ export default function Pizza() {
   //  setPizzas(pizzas)
 
   //}
-
-
-
   return (
     <div className="home">
       {pizzaDetalle.map((detalle) => (
