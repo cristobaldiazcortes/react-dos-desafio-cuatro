@@ -5,13 +5,15 @@ import { Card, ListGroup, Button } from "react-bootstrap";
 
 export default function Home() {
   const [pizzas, setPizzas] = useState([]);
+  // const [id, setId] = useState("")
   const endpoint = "/pizzas.json";
 
-  const {id} = useParams();
+
   const navigate = useNavigate();
 
-  const irPizza = () => {
+  const irPizza = (id) => {
     navigate(`/pizza/${id}`);
+    console.log(id)
   }
   
   // useEffect(() => {
@@ -32,11 +34,9 @@ export default function Home() {
     const data = await response.json();
 
     setPizzas(data);
-    console.log(data);
+    // console.log(data);
 
-    if (id) {
-      
-    }
+  
   };
   useEffect(() => {
     mostrarData();
@@ -57,9 +57,9 @@ export default function Home() {
             <ListGroup.Item><img className="pizzita" src='https://i.postimg.cc/NfQrK0Ky/pizza-1.png' alt='pizzita'/> {pizza.ingredients[2]}</ListGroup.Item>
             <ListGroup.Item><img className="pizzita" src='https://i.postimg.cc/NfQrK0Ky/pizza-1.png' alt='pizzita'/> {pizza.ingredients[3]}</ListGroup.Item>
           </ListGroup>
-          <Card.Body>
+          <Card.Body> 
             <h3>${pizza.price}</h3>
-            <Button variant="info" onClick={irPizza}>Ver más <img className="ojos" src='https://i.postimg.cc/qMz5V1jv/eyes-1.png' alt='eyes'/></Button>
+            <Button variant="info" onClick={()=> (irPizza(pizza.id))}>Ver más <img className="ojos" src='https://i.postimg.cc/qMz5V1jv/eyes-1.png' alt='eyes'/></Button>
             <Button variant="danger">Añadir <img className="carrito" src='https://i.postimg.cc/90jZ8F89/shopping-cart.png' alt='shopping-cart'/></Button>
           </Card.Body>
         </Card>
