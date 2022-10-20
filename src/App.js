@@ -5,43 +5,38 @@ import Navbar from "./components/Navbar";
 import Home from "./components/views/Home";
 import Pizza from "./components/views/Pizza";
 import Carrito from "./components/views/Carrito";
-import Contexto from "./components/contexto/Contexto";
-import { useState, useEffect } from "react";
+import {Provider} from "./components/contexto/Contexto"
+
 
 function App() {
+  // const [pizzas, setPizzas] = useState([]);
+  // const endpoint = "/pizzas.json";
 
-  const [pizzas, setPizzas] = useState([]);
-  const endpoint = "/pizzas.json";
+  // const mostrarData = async () => {
+  //   const response = await fetch("http://localhost:3000/" + endpoint);
+  //   const data = await response.json();
 
-  const mostrarData = async () => {
-    const response = await fetch("http://localhost:3000/" + endpoint);
-    const data = await response.json();
-
-    setPizzas(data);
-    // console.log(data);
-
-  
-  };
-  useEffect(() => {
-    mostrarData();
-  }, []);
-
-
+  //   setPizzas(data);
+  //   // console.log(data);
+  // };
+  // useEffect(() => {
+  //   mostrarData();
+  // }, []);
 
   return (
     <>
-      <Contexto.Provider value={{pizzas, setPizzas}}>
+      <Provider>
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path="/pizza/" >
+            <Route path="/pizza/">
               <Route path=":id" element={<Pizza />} />
             </Route>
             <Route path="/" element={<Home />} />
             <Route path="/carrito" element={<Carrito />} />
           </Routes>
         </BrowserRouter>
-      </Contexto.Provider>
+      </Provider>
     </>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router";
 import { Card, ListGroup, Button } from "react-bootstrap";
-import Contexto from "../contexto/Contexto";
+import { Contexto } from "../contexto/Contexto";
 
 
 export default function Home() {
