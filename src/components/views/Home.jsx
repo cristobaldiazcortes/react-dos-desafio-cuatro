@@ -17,21 +17,6 @@ export default function Home() {
     console.log(id)
   }
   
-  // useEffect(() => {
-  //   const mostrarData = new Promise(resolve => {
-  //     setTimeout(()=>{
-  //       resolve("http://localhost:3000/" + endpoint)
-
-  //     },500)
-       
-  //   })
-  //   mostrarData.then(res => setPizzas(res))
-
-  // }, [])
-
-
-
-
   return (
     <div className="home">
       {pizzas.map((pizza) => (
