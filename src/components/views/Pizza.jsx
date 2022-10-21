@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Card, ListGroup } from "react-bootstrap";
-import { Contexto } from "../contexto/Contexto";
+import  Contexto  from "../contexto/Contexto";
 
 
 export default function Pizza() {
   const [pizzaDetalle, setPizzaDetalle] = useState({});
-  const { pizzas } = useContext(Contexto);
+  const { pizzas} = useContext(Contexto);
   const { id } = useParams();
 
 
@@ -32,7 +32,7 @@ export default function Pizza() {
   //}
   return (
     <div className="home">
-      {pizzaDetalle.map((detalle) => (
+      {pizzas.map((detalle) => (
         <Card key={detalle.id} style={{ width: "18rem" }}>
           <Card.Img variant="top" src={detalle.img} />
           <Card.Body>
