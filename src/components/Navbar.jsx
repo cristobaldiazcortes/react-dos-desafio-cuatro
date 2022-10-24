@@ -18,8 +18,8 @@ export default function Navbarra() {
         </Navbar.Brand>
 
         <Nav>
-          {" - "}
-          <NavLink to="/carrito">carrito</NavLink>
+          
+          <NavLink to="/carrito"><img className="carrito-nav" src='https://i.postimg.cc/90jZ8F89/shopping-cart.png' alt='shopping-cart'/></NavLink>
         </Nav>
       </Container>
     </Navbar>
