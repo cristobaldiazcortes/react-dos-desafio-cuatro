@@ -10,7 +10,7 @@ import Contexto from "./components/contexto/Contexto";
 function App() {
   const [pizzas, setPizzas] = useState([]);
   const [carritoPizzas, setCarritoPizzas] = useState([]);
-  const endpoint = "/pizzas.json";
+  //const endpoint = "/pizzas.json";
 
   const agregar = (pizza) => {
     const exist = carritoPizzas.find((carritoPizza) => carritoPizza.id === pizza.id);
@@ -41,7 +41,7 @@ function App() {
 
 
   const mostrarData = async () => {
-    const response = await fetch("http://localhost:3000/" + endpoint);
+    const response = await fetch("https://api.npoint.io/6804b8e8925fcb2e68d5");
     const data = await response.json();
 
     setPizzas(data);
